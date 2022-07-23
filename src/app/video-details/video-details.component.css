@@ -1,0 +1,133 @@
+
+.main{
+    display: flex;
+   }
+   .videoDetails{
+     width: 50%;
+   }
+   
+   .video-preview{
+     width: 48%;
+     /* height: 500px; */
+   }
+
+   #card-height{
+     height: 150px;
+   }
+   
+   #save-btn{
+       margin-left: 500px;
+
+   }
+   
+   
+   
+   
+   
+   
+   .example-form{
+     margin-left: 12px;
+   }
+   
+     .Video keywords{
+     margin-left: 10px;
+     }
+   
+   
+   
+      .mat-radio-button {
+       margin-left: 10px;
+     }
+   
+   
+   
+     .example-form {
+      
+         width: 50%;
+     } 
+     
+     .example-full-width {
+       width: 87%;
+       
+   
+     }
+   
+     #title{
+      width: 87%;
+       margin-left: 3px;
+      
+     }
+   
+     #description{
+      width: 87%;
+       margin-left: 3px;
+       height: 100px;
+     }
+   
+     #height{
+         height: 70px;
+     }
+    
+   
+     #duration{
+      width: 87%;
+       margin-left: 3px;
+       margin-top: 20px;
+     }
+      
+     #audience{
+         margin-left: 10px;
+     }
+    
+     .example-chip-list {
+       width: 100%;
+     }
+     
+    
+     .example-chip-list{
+       
+      width: 87%;
+     }
+    
+   
+   
+   
+     .date-picker{
+      
+      width: 87%;
+     }
+   
+     #date-shift{
+       margin-left: 622px;
+     }
+   
+     .Recording-Location{
+      width: 87%;
+       
+     }
+    
+     .licensce{
+      width: 87%;
+       
+     }
+   
+     .distribution{
+      width: 87%;
+       
+     }
+   
+     .video-category{
+      width: 87%;
+       
+     }
+   
+     .Visibility{
+      width: 87%;
+       
+     }
+   
+    
+   
+     /* .video-preview{
+       width: 50%;
+     } */

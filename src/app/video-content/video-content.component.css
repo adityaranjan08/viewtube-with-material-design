@@ -1,0 +1,46 @@
+.example-card {
+    width: 400px;
+    height: 360px;
+    margin:20px;
+    float: left;
+  } 
+
+ 
+
+  
+
+  .example-spacer {
+    flex: 1 1 auto;
+   }
+
+   input {
+    width: 30%;
+    background-color: #C2185B;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    height: 25px;
+  }
+  
+  ::placeholder {
+    color: gainsboro;
+    font-size: 17px;
+  }
+
+  .example-container {
+    border: 1px solid #555;
+  }
+
+.example-sidenav{
+  width: 250px;
+}
+
+#sidenavText{
+  padding-top: 10px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+#sign-in{
+  margin-left: 30px;
+}

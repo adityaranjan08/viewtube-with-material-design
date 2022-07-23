@@ -1,0 +1,75 @@
+<div>
+  <h1 style="margin-left:10px">Live Stream Editor</h1>
+
+  <form class="example-form" [formGroup]="liveForm">
+    <p>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label id="title">Add Title</mat-label>
+        <textarea matInput formControlName="liveStreamTitle"></textarea>
+      </mat-form-field>
+    </p>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="date-picker" appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input formControlName="liveDateStart" matInput [matDatepicker]="picker">
+
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>From Time</mat-label>
+            <input formControlName="liveStartTime" matInput placeholder="HH:mm">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>To Time</mat-label>
+            <input formControlName="liveEndTime" matInput placeholder="HH:mm">
+
+          </mat-form-field>
+        <td>
+          <mat-form-field class="date-picker" appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="liveDateEnd">
+
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+        </td>
+      </tr>
+    </table>
+
+    <h1>Event Details</h1>
+    <div class="main">
+
+      <div class="first-field">
+        <mat-form-field id="text-area" appearance="fill">
+          <mat-label>Add Event Details</mat-label>
+          <textarea matInput id="height" formControlName="text-filed-value"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="second-field">
+        <mat-form-field class="example-chip-list" appearance="outline">
+          <mat-label>Video keywords</mat-label>
+          <mat-chip-list #chipList aria-label="Video keywords" multiple [formControl]="formControl">
+            <mat-chip *ngFor="let keyword of keywords" [selected]="keyword" [value]="keyword"
+              (removed)="removeKeyword(keyword)">
+              {{keyword}}
+            </mat-chip>
+            <input formControlName="tag-values" placeholder="New keyword..." [matChipInputFor]="chipList"
+              (matChipInputTokenEnd)="addKeywordFromInput($event)">
+          </mat-chip-list>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+  <br>
+  <button (click)="saveData()" id="save-btn" mat-raised-button [disabled]="!liveForm.valid"
+    color="primary">Save</button>
+</div>

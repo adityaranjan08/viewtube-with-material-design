@@ -1,0 +1,99 @@
+
+
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle()" class="example-icon"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+
+    <span>ViewTube</span>
+    <span class="example-spacer"></span>
+    <input matInput placeholder="search">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>search</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>mic</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+
+
+
+    <button mat-icon-button class="example-icon">
+        <mat-icon>notifications</mat-icon>
+    </button>
+    <button  mat-icon-button class="example-icon">
+        <mat-icon routerLink="studio/upload" >video_call</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>apps</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>person_outline</mat-icon>
+    </button>
+</mat-toolbar>
+
+
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <div> <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>home</mat-icon>
+            </button>Home</div>
+        <div> <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>explore</mat-icon>
+            </button>Explore</div>
+        <div> <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>subscriptions</mat-icon>
+            </button>Subscriptions</div>
+        <div> <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>video_library</mat-icon>
+            </button>Library</div>
+        <div> <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>history</mat-icon>
+            </button>History</div>
+        <hr>
+
+        <p id="sidenavText">
+            Sign in to like videos, <br>comment, and subscribe.
+        </p>
+        <button id="sign-in" mat-stroked-button color="primary" aria-label="Example icon-button with share icon">
+            <mat-icon>account_circle</mat-icon>SIGN IN
+        </button>
+
+
+    </mat-drawer>
+    
+    <app-chips-bar></app-chips-bar>
+
+
+    <mat-grid-list cols="4">
+        <mat-grid-tile *ngFor="let video of video$ | async">
+
+            <mat-card app-player class="example-card">
+                <a href="#">
+                    <img mat-card-image [src]="video.snippet.thumbnails.medium.url">
+                </a>
+                <div id="duration">
+                    {{video.contentDetails.length}}
+
+                </div>
+
+
+                <mat-card-content>
+                    <h5>{{ video.snippet.title }}</h5>
+                    <p>{{ video.snippet.channelTitle }}</p>
+                    <p>{{ video.statistics.viewCount }} views . {{ video.snippet.relativeTime }}</p>
+                </mat-card-content>
+
+            </mat-card>
+
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+
+
+</mat-drawer-container>
+
+<app-account></app-account>

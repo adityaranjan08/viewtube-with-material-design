@@ -1,0 +1,35 @@
+<form class="register-form" #registerForm="ngForm" (submit)="registerUser(registerForm)">
+  <h2>Register</h2>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Email Address</mat-label>
+        <input matInput type="email" placeholder="Email Address" required #name="ngModel" name="email" ngModel>
+        </mat-form-field>
+      <br>
+      <span *ngIf="name.invalid && name.touched">Please enter a valid Input</span>
+    </p>
+  <p>
+      <mat-form-field appearance="standard">
+        <mat-label>Password</mat-label>
+        <input matInput  type="password" minlength="3" placeholder="Password" required #password="ngModel" name="password" ngModel>
+      </mat-form-field>
+      <br>
+      <span *ngIf="password.invalid && password.touched">Please enter a valid input </span>
+  </p>
+     <p>
+     <mat-form-field appearance="standard">
+     <mat-label type="password">Confirm Password</mat-label>
+     <input matInput placeholder="Password" type="password">
+     </mat-form-field>
+  </p>
+    <br>
+    <mat-checkbox class="example-margin" name="checkBox" ngModel>Allow Scheduling Live Stream</mat-checkbox>
+    <br>
+    <br>
+    <button mat-stroked-button color="primary" [disabled]="registerForm.invalid" type="submit">Register</button>
+    &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+    <button mat-stroked-button color="primary">Login</button>
+     
+    
+    
+</form>

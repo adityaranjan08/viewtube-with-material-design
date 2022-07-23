@@ -1,0 +1,177 @@
+<div class="main">
+    
+       
+        
+         <form class="example-form" #myForm="ngForm">
+            <h1>
+                Video Details
+                <button id="save-btn" mat-raised-button [disabled]="!myForm.valid" color="primary">Save</button>
+            </h1>
+            
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Video url </mat-label>
+                <input type="email" matInput name="videoUrl" required ngModel>
+                <mat-hint>Video Url needs to be of type Youtube Embed</mat-hint>
+            </mat-form-field>
+
+
+            <mat-form-field id="title" appearance="outline">
+                <mat-label>Title </mat-label>
+                <input matInput #input maxlength="120" name="title" required ngModel>
+                <mat-hint id="num">{{input.value?.length || 0}}/120</mat-hint>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline" id="description">
+                <mat-label>Description</mat-label>
+                <textarea matInput id="height" name="description" ngModel></textarea>
+            </mat-form-field>
+
+            <mat-form-field id="duration" appearance="outline">
+                <mat-label>Video Duration</mat-label>
+                <input type="domain" matInput name="video-duration"  ngModel>
+                <mat-hint>Enter the duration in following format</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field id="duration" appearance="outline">
+                <mat-label>Channel Title *</mat-label>
+                <input type="domain" matInput name="duration" ngModel>
+            </mat-form-field>
+
+
+            
+                 <h3>Audience</h3>
+                <p>Is this video made for kids?</p>
+                <!-- <mat-radio-button class="example-radio-button" *ngFor="let answer1 of answers" [value]="answer1">
+                    {{answer1}}
+                </mat-radio-button> -->
+                <mat-radio-group aria-label="Select an Option" name="audience" ngModel>
+                    <mat-radio-button value="1">Yes,its made for Kids </mat-radio-button>
+                    <mat-radio-button value="2">Not for kids</mat-radio-button>
+                </mat-radio-group>
+                <!-- <div class="example-selected-value" >Your answer is: {{answers}}</div> -->
+
+                <br><br>
+                <p>Age Restriction</p>
+                <mat-radio-group  aria-label="Select an Option">
+                    <mat-radio-button value="1">Yes, Restrict my videos to viewers over 18</mat-radio-button>
+                    <mat-radio-button value="2">No, don't restrict my videos to viewers over 18</mat-radio-button>
+                </mat-radio-group>
+                <br><br>
+            
+
+
+            <p >Tags<p>
+
+            <mat-form-field class="example-chip-list" appearance="outline">
+                <mat-label>Video keywords</mat-label>
+                <mat-chip-list #chipList aria-label="Video keywords" multiple>
+
+                    <input matInput placeholder="New Keyword...">
+                </mat-chip-list>
+            </mat-form-field>
+
+
+            <h3>Recording Date</h3>
+            <mat-form-field class="date-picker" appearance="outline">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint id="date-shift">MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <h3>Recording Location</h3>
+            <mat-form-field class="Recording-Location" appearance="outline">
+
+                <mat-label>Location</mat-label>
+                <mat-select>
+                    <mat-option>India </mat-option>
+                    <mat-option value="valid">New York</mat-option>
+                    <mat-option value="invalid">London</mat-option>
+                    <mat-option value="invalid">Mexico</mat-option>
+                    <mat-option value="invalid">Japan</mat-option>
+                    <mat-option value="invalid">Canada</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        
+
+        <h3>License</h3>
+        <mat-form-field class="licensce" appearance="outline">
+
+            <mat-label>License</mat-label>
+            <mat-select>
+                <mat-option value="valid"> Standard Viewtube License</mat-option>
+                <mat-option value="valid">Creative Common License</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <h3>Distribution</h3>
+        <mat-form-field class="distribution" appearance="outline">
+
+            <mat-label>Distribution</mat-label>
+            <mat-select>
+                <mat-option value="valid"> Everywhere</mat-option>
+                <mat-option value="valid">Make this video available only on monetized platforms</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <h3>Video Category</h3>
+        <mat-form-field class="video-category" appearance="outline">
+
+            <mat-label>Video Category</mat-label>
+            <mat-select>
+                <mat-option value="valid"> Film & Animation</mat-option>
+                <mat-option value="valid">Autos & Vehicles</mat-option>
+                <mat-option value="valid">Music</mat-option>
+                <mat-option value="valid">Pets & Animals</mat-option>
+                <mat-option value="valid">Sports</mat-option>
+                <mat-option value="valid">Travel & Events</mat-option>
+                <mat-option value="valid">Gaming</mat-option>
+                <mat-option value="valid">People & Blogs</mat-option>
+                <mat-option value="valid">Comedy</mat-option>
+                <mat-option value="valid">Entertainment</mat-option> 
+                <mat-option value="valid">News & Politics</mat-option>
+                <mat-option value="valid">Howto & Style</mat-option>
+                <mat-option value="valid">Education</mat-option>
+                <mat-option value="valid">Science & Technology</mat-option>
+                <mat-option value="valid">Nonprofits & Activism</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <h3>Visiblity</h3>
+        <mat-form-field class="Visibility" appearance="outline">
+            <mat-label>Visibility(Mandatory)</mat-label>
+            <mat-select>
+                <mat-option value="valid"> Private</mat-option>
+                <mat-option value="valid">Public</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        </form>
+
+    
+
+
+
+
+        <div class="video-preview">
+            <h1>Video Preview</h1>
+            <mat-card class="example-card" id="card-height">
+                <mat-card-title>Description</mat-card-title>
+                <mat-card-content>
+                    <p>Visiblity - Public</p>
+                    <p>Distribution - Only on Monetized Platforms</p>
+                    <p>License - Creative Commons License</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+
+
+
+    
+</div>
